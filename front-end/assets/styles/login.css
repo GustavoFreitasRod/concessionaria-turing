@@ -127,3 +127,51 @@ button:hover {
 	font-size: 22px;
 	user-select: none;
 }
+
+@media (max-width: 1024px) {
+	body {
+		padding: 20px;
+		font-size: 18px;
+	}
+
+	.container {
+		width: min(560px, 100%);
+		padding: 36px;
+	}
+}
+
+@media (max-width: 640px) {
+	body {
+		align-items: flex-start;
+		min-height: 100vh;
+		height: auto;
+		padding: 16px;
+		font-size: 16px;
+	}
+
+	.container {
+		width: 100%;
+		padding: 24px 18px;
+		border-radius: 14px;
+	}
+
+	.logo_concessionaria_turing {
+		max-width: 220px;
+	}
+
+	label {
+		font-size: 14px;
+	}
+
+	input,
+	button {
+		padding: 12px;
+		font-size: 15px;
+	}
+
+	.alerta {
+		right: 12px;
+		top: 12px;
+		width: calc(100vw - 24px);
+	}
+}

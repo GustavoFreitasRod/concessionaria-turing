@@ -104,3 +104,32 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: calc(100vw - 24px);
+    max-width: none;
+    padding: 22px 18px;
+    border-radius: 10px;
+  }
+
+  .modal-header {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .modal-message {
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  .modal-buttons {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .modal-btn {
+    width: 100%;
+    padding: 11px 14px;
+  }
+}
