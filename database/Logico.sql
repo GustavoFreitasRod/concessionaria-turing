@@ -1,38 +1,38 @@
-CREATE TABLE Cliente (
+CREATE TABLE IF NOT EXISTS Cliente (
     cpf_cnpj VARCHAR(14) PRIMARY KEY,
     nome_completo VARCHAR(50),
     telefone VARCHAR(11),
-    email VARCHAR(30),
+    email VARCHAR(100),
     estado CHAR(2),
     cidade VARCHAR(30),
     cep VARCHAR(8),
     bairro VARCHAR(30),
     rua VARCHAR(30),
-    numero SMALLINT,
+    numero INTEGER,
     tipo_cliente VARCHAR(2) CHECK (tipo_cliente IN ('pf', 'pj'))
-)
+);
 
-CREATE TABLE Veiculo (
+CREATE TABLE IF NOT EXISTS Veiculo (
     chassi VARCHAR(17) PRIMARY KEY,
     cor VARCHAR(30),
     ano INTEGER,
-    modelo VARCHAR(10) CHECK (modelo IN ('Pop 110', 'Biz125', 'CG 160', 'XRE 200', 'CB 300'))
-)
+    modelo VARCHAR(40)
+);
 
-CREATE TABLE Mercadoria (
+CREATE TABLE IF NOT EXISTS Mercadoria (
     cod_mercadoria INTEGER PRIMARY KEY,
     nome VARCHAR(30),
     tipo VARCHAR(15) CHECK (tipo IN ('peca','boutique','capacete','oleo'))
 );
 
-CREATE TABLE Usuario (
+CREATE TABLE IF NOT EXISTS Usuario (
     cod_usuario SMALLSERIAL PRIMARY KEY,
     nome VARCHAR(30),
-    email VARCHAR(30),
-    senha VARCHAR(20)
+    email VARCHAR(100),
+    senha VARCHAR(100)
 );
 
-CREATE TABLE Venda (
+CREATE TABLE IF NOT EXISTS Venda (
     cod_venda BIGSERIAL PRIMARY KEY,
     data_venda TIMESTAMP,
     valor DECIMAL(8,2),
