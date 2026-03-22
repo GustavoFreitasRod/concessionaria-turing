@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Venda</title>
+    <link rel="stylesheet" href="assets/styles/cadastro.css">
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <section class="form-container">
+            <h1>NOVA VENDA</h1>
+            <form id="formVenda">
+                <fieldset>
+                    <legend>Dados da Venda</legend>
+
+                    
+                    <div class="form-group">
+                        <label for="cliente">Cliente: <span class="required">*</span></label>
+                        <input type="text" id="cliente" name="cliente" list="lista-clientes" placeholder="Digite o nome ou CPF..." required autocomplete="off">
+                        <datalist id="lista-clientes"></datalist>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="data">Data da Venda<span class="required">*</span></label>
+                        <input type="date" id="data" name="data" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>TIPO DE VENDA: <span class="required">*</span></label>
+
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="tipovenda" value="mercadoria" id="radioMercadoria" checked>
+                                <span>Mercadoria</span>
+                            </label>
+
+                            <label class="radio-option">
+                                <input type="radio" name="tipovenda" value="veiuculo" id="radioVeiculo">
+                                <span>Veiculo</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mercadoria-veiculo">Mercadoria e/ou Veículo <span class="required">*</span></label>
+                        <input type="text" id="mercadoria-veiculo" name="mercadoria-veiculo" list="lista-itens" placeholder="Digite o item, chassi ou modelo..." required autocomplete="off">
+                        <datalist id="lista-itens"></datalist>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantidade">Quantidade: <span class="required">*</span></label>
+                        <input type="number" id="quantidade" name="quantidade" required min="1" value="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="valor">Valor Total (R$): <span class="required">*</span></label>
+                        <input type="number" id="valor" name="valor" step="0.01" min="0" placeholder="0.00" required>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="reset" class="btn-cancel">CANCELAR AÇÃO</button>
+                    <button type="submit" class="btn-save">SALVAR</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="./scripts/app-venda.js" defer></script>
+</body>
+</html>

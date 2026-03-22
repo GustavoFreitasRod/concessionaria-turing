@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles/menu.css" />
+    <script src="scripts/app-menu.js" defer></script>
+    <title>Menu Inicial</title>
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="topbar-left">
+            <img src="assets/images/concessionaria-turing.png" alt="Logo Concessionária Turing" />
+            <div class="topbar-text">
+                <h1>Painel de Gestão</h1>
+                <p>Concessionária Turing</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="menu" aria-label="Atalhos de Gerenciamento">
+            <a href="gerenciar-cliente.html" class="menu_navegacao">
+                <img src="assets/images/parceria.png" alt="Gerenciar Clientes" />
+                <span>GERENCIAR CLIENTES</span>
+            </a>
+
+            <a href="gerenciar-venda.html" class="menu_navegacao">
+                <img src="assets/images/crescimento.png" alt="Gerenciar Vendas" />
+                <span>GERENCIAR VENDAS</span>
+            </a>
+
+            <a href="gerenciar-veiculo.html" class="menu_navegacao">
+                <img src="assets/images/carro.png" alt="Gerenciar Veículo" />
+                <span>GERENCIAR VEÍCULO</span>
+            </a>
+
+            <a href="gerenciar-mercadoria.html" class="menu_navegacao">
+                <img src="assets/images/caixa.png" alt="Gerenciar Mercadoria" />
+                <span>GERENCIAR MERCADORIA</span>
+            </a>
+
+            <a href="gerenciar-usuario.html" class="menu_navegacao">
+                <img src="assets/images/user.png" alt="Gerenciar Usuários" />
+                <span>GERENCIAR USUÁRIOS</span>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="user-box">
+            <span id="userGreeting">Olá, Admin</span>
+            <button id="btnLogout">LOGOUT</button>
+        </div>
+    </footer>
+</body>
+
+</html>

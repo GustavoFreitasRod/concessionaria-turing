@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Veículo</title>
+    <link rel="stylesheet" href="assets/styles/cadastro.css">
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <section class="form-container">
+            <h1>NOVO VEÍCULO</h1>
+            <form>
+                <fieldset>
+                    <legend>Dados do Veículo</legend>
+
+                    <div class="form-group">
+                        <label for="chassi">CHASSI: <span class="required">*</span></label>
+                        <input type="text" id="chassi" name="chassi" required maxlength="17"
+                            pattern="[A-HJ-NPR-Z0-9]{17}"
+                            title="O chassi deve conter exatamente 17 caracteres alfanuméricos (sem I, O, Q)"
+                            placeholder="Ex: 9BWZZZ377VT004251">
+                        <small class="hint">17 caracteres alfanuméricos (letras maiúsculas e números, exceto I, O,
+                            Q)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cor">COR: <span class="required">*</span></label>
+                        <input type="text" id="cor" name="cor" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ano">ANO: <span class="required">*</span></label>
+                        <input type="number" id="ano" name="ano" required min="2000" max="2100" placeholder="Ex: 2024">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modelo">MODELO:</label>
+                        <select id="modelo" name="modelo" required>
+                            <option value="Toyota Corolla">Toyota Corolla</option>
+                            <option value="Honda Civic">Honda Civic</option>
+                            <option value="Volkswagen Golf">Volkswagen Golf</option>
+                            <option value="Ford Mustang">Ford Mustang</option>
+                            <option value="Chevrolet Onix">Chevrolet Onix</option>
+                            <option value="Hyundai HB20">Hyundai HB20</option>
+                            <option value="Jeep Compass">Jeep Compass</option>
+                            <option value="Fiat Strada">Fiat Strada</option>
+                            <option value="BMW Série 3">BMW Série 3</option>
+                            <option value="Tesla Model 3">Tesla Model 3</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="reset" class="btn-cancel">CANCELAR</button>
+                    <button type="submit" class="btn-save">SALVAR</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="./scripts/app-veiculo.js" defer></script>
+</body>
+
+</html>

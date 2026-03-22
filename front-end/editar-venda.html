@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Venda</title>
+    <link rel="stylesheet" href="assets/styles/cadastro.css">
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <section class="form-container">
+            <h1>EDITAR VENDA</h1>
+            <form>
+                <fieldset>
+                    <legend>Dados da Venda</legend>
+
+                    <div class="form-group">
+                        <label for="cliente">Cliente: <span class="required">*</span></label>
+                        <input type="text" id="cliente" name="cliente" required readonly disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="data">Data da Venda<span class="required">*</span></label>
+                        <input type="date" id="data" name="data" required readonly disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label>TIPO DE VENDA: <span class="required">*</span></label>
+                    
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="tipoVenda" value="mercadoria" id="radioMercadoria">
+                                <span>Mercadoria</span>
+                            </label>
+                    
+                            <label class="radio-option">
+                                <input type="radio" name="tipoVenda" value="veiculo" id="radioVeiculo">
+                                <span>Veículo</span>
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="mercadoria-veiculo">Mercadoria e/ou Veículo <span class="required">*</span></label>
+                        <input type="text" id="mercadoria-veiculo" name="mercadoria-veiculo" list="lista-itens" placeholder="Pesquise o item..." required autocomplete="off">
+                        <datalist id="lista-itens"></datalist>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantidade">Quantidade: <span class="required">*</span></label>
+                        <input type="number" id="quantidade" name="quantidade" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="valor">Valor Total (R$):</label>
+                        <input type="number" id="valor" name="valor" step="0.01" required>
+                    </div>
+
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="reset" class="btn-cancel">CANCELAR AÇÃO</button>
+                    <button type="submit" class="btn-save">SALVAR</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="./scripts/app-edit-venda.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Veículo</title>
+    <link rel="stylesheet" href="assets/styles/gerenciar.css">
+    <script src="scripts/app-gerenciar-veiculo.js" defer></script>
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="assets/images/logo-horizontal.png" alt="Logo da Concessionária Turing">
+    </header>
+
+    <section class="navigation">
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Pesquisar por modelo ou chassi">
+            <button type="submit" id="searchBtn">
+                <img src="assets/images/lupa.png" alt="Buscar">
+            </button>
+        </div>
+        <div class="actions">
+            <button id="editBtn" disabled>EDITAR VEÍCULO</button>
+            <button id="deleteBtn" disabled>EXCLUIR VEÍCULO</button>
+            <a href="cadastrar-veiculo.html">NOVO VEÍCULO</a>
+        </div>
+    </section>
+
+    <div class="table-container">
+        <table id="veiculosTable">
+            <thead>
+                <tr>
+                    <th>MODELO</th>
+                    <th>CHASSI</th>
+                    <th>COR</th>
+                    <th>ANO</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <footer>
+        <a href="menu.html">MENU INICIAL</a>
+        <button onclick="window.location.href='login.html'">LOGOUT</button>
+    </footer>
+
+</body>
+
+</html>

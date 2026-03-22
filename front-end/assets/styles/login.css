@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Outfit', 'Segoe UI', sans-serif;
+}
+
+body {
+	background: #f4f6f8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-size: 20px;
+}
+
+/* Container principal */
+.container {
+	width: 420px;
+	padding: 50px;
+	border-radius: 20px;
+	background: #ffffff;
+	box-shadow: 0 15px 35px #5DA0EC;
+	
+}
+
+/* Logo */
+.logo_concessionaria_turing {
+	display: block;
+	margin: 0 auto 10px;
+	max-width: 280px;
+}
+
+label {
+	color: #444;
+	font-size: 16px;
+	font-weight: 500;
+	display: block;
+	margin-bottom: 10px;
+}
+
+input {
+	width: 100%;
+	padding: 14px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	background-color: #f9fafb;
+	font-size: 15px;
+	outline: none;
+	transition: 0.3s;
+}
+
+/* Efeito ao clicar */
+input:focus {
+	border-color: #5DA0EC;
+	box-shadow: 0 0 6px rgba(93, 160, 236, 0.4);
+	background-color: #fff;
+}
+
+button {
+	width: 100%;
+	padding: 14px;
+	font-size: 16px;
+	font-weight: 600;
+	color: white;
+	background: linear-gradient(135deg, #5DA0EC, #1e40af);
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: 0.3s;
+	margin-top: 10px;
+}
+
+/* Hover do botão */
+button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Container do botão */
+.botao {
+	text-align: center;
+}
+
+/* Estilização do alerta */
+.alerta {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	padding: 16px 20px;
+	border-radius: 10px;
+	color: white;
+	font-weight: 500;
+	box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+	opacity: 0;
+	transform: translateY(-20px);
+	transition: all 0.3s ease;
+	z-index: 999;
+}
+
+.alerta.erro {
+	background: linear-gradient(135deg, #ff4d4d, #cc0000);
+}
+
+.alerta.show {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.campo-senha {
+	position: relative;
+}
+
+.campo-senha input {
+	padding-right: 45px; /* espaço pro botão */
+}
+
+.toggle-senha {
+	position: absolute;
+	right: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	font-size: 22px;
+	user-select: none;
+}

@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Outfit', 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 5px;
+}
+
+header img {
+    height: 65px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 20px;
+    flex-wrap: wrap;
+}
+
+/* --- Barra de busca --- */
+.search {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search input {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    padding: 8px 10px;
+    width: 500px;
+}
+
+.search button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search button img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.search input:focus {
+    border-color: #20539B;
+    box-shadow: 0 0 5px rgba(32, 83, 155, 0.5);
+}
+
+/* --- Botões de ação --- */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.actions a,
+.actions button {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #fff;
+    color: #20539B;
+    border: 2px solid #20539B;
+    padding: 10px 15px;
+    border-radius: 8px;
+    width: 160px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.actions a:hover,
+.actions button:hover:not(:disabled):not(#deleteBtn) {
+    background-color: #5DA0EC;
+    color: #fff;
+}
+
+.actions button:disabled {
+    background-color: #fff;
+    color: #7aabef;
+    border-color: #7aabef;
+    cursor: not-allowed;
+}
+
+#deleteBtn {
+    background-color: #20539B;
+    color: #fff;
+    border-color: #20539B;
+    transition: all 0.2s ease;
+}
+
+#deleteBtn:hover:not(:disabled) {
+    background-color: #5DA0EC;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(38, 19, 209, 0.6);
+    animation: dangerPulse 1s infinite alternate;
+}
+
+#deleteBtn:disabled {
+    background-color: #7aabef;
+    color: #ffffff;
+    border-color: #7aabef;
+    cursor: not-allowed;
+}
+
+@keyframes dangerPulse {
+    from {
+        box-shadow: 0 0 10px rgba(28, 16, 205, 0.3);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(6, 91, 227, 0.866);
+    }
+}
+
+/* --- Tabela com altura fixa e rolagem interna --- */
+.table-container {
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 450px; /* altura fixa da tabela */
+    overflow-y: auto; /* rolagem vertical interna */
+}
+
+/* Mantém o cabeçalho fixo durante o scroll */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #20539B;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+tr:hover {
+    background-color: #c8dff8;
+}
+
+tr.selected {
+    background-color: #c8dff8 !important;
+}
+
+/* --- Rodapé --- */
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+footer a {
+    background-color: #20539B;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer button {
+    background-color: #fff;
+    color: #20539B;
+    border: 2px solid #20539B;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+footer button:hover {
+    background-color: #5DA0EC;
+    color: #fff;
+}
+
+/* Estilização do alerta */
+.alerta {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	padding: 16px 20px;
+	border-radius: 10px;
+	color: white;
+	font-weight: 500;
+	box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+	opacity: 0;
+	transform: translateY(-20px);
+	transition: all 0.3s ease;
+	z-index: 999;
+}
+
+.alerta.erro {
+	background: linear-gradient(135deg, #ff4d4d, #cc0000);
+}
+
+.alerta.show {
+	opacity: 1;
+	transform: translateY(0);
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cliente</title>
+    <link rel="stylesheet" href="assets/styles/cadastro.css">
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <section class="form-container">
+            <h1>EDITAR CLIENTE</h1>
+            <form>
+                <fieldset>
+                    <legend>Dados do Cliente</legend>
+
+                    <div class="form-group">
+                        <label>TIPO DE PESSOA: <span class="required">*</span></label>
+
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="tipoPessoa" value="pf" id="tipoPF" disabled>
+                                <span>Pessoa Física</span>
+                            </label>
+
+                            <label class="radio-option">
+                                <input type="radio" name="tipoPessoa" value="pj" id="tipoPJ" disabled>
+                                <span>Pessoa Jurídica</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nome">NOME: <span class="required">*</span></label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cpf_cnpj" id="labelDocumento">CPF/CNPJ: <span class="required">*</span></label>
+                        <input type="text" id="cpf_cnpj" name="cpf_cnpj" required readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">TELEFONE: <span class="required">*</span></label>
+                        <input type="tel" id="telefone" name="telefone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-MAIL:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-inline">
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" name="cep">
+                        <label for="rua">RUA:</label>
+                        <input type="text" id="rua" name="rua">
+                    </div>
+
+                    <div class="form-inline">
+                        <label for="numero">NÚMERO:</label>
+                        <input type="text" id="numero" name="numero">
+                        <label for="complemento">COMPLEMENTO:</label>
+                        <input type="text" id="complemento" name="complemento">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bairro">BAIRRO:</label>
+                        <input type="text" id="bairro" name="bairro">
+                    </div>
+
+                    <div class="form-inline">
+                        <label for="cidade">CIDADE:</label>
+                        <input type="text" id="cidade" name="cidade">
+                        <label for="uf">UF:</label>
+                        <input type="text" id="uf" name="uf" maxlength="2">
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="reset" class="btn-cancel">CANCELAR AÇÃO</button>
+                    <button type="submit" class="btn-save">SALVAR</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="./scripts/app-edit-cliente.js" defer></script>
+</body>
+</html>

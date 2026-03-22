@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Usuário</title>
+    <link rel="stylesheet" href="assets/styles/gerenciar.css">
+    <script src="assets/scripts/app-gerenciar-usuario.js" defer></script>
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="assets/images/logo-horizontal.png" alt="Logo da Concessionária Turing">
+    </header>
+
+    <section class="navigation">
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Pesquisar por Nome, ID ou E-mail">
+            <button type="submit" id="searchBtn"><img src="assets/images/lupa.png" alt="Buscar"></button>
+        </div>
+        <div class="actions">
+            <button id="editBtn" disabled>EDITAR USUÁRIO</button>
+            <button id="deleteBtn" disabled>EXCLUIR USUÁRIO</button>
+            <a href="cadastrar-usuario.html">NOVO USUÁRIO</a>
+        </div>
+    </section>
+
+    <div class="table-container">
+        <table id="usuariosTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOME</th>
+                    <th>E-MAIL</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <footer>
+        <a href="menu.html">MENU INICIAL</a>
+        <button onclick="window.location.href='login.html'">LOGOUT</button>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Cliente</title>
+    <link rel="stylesheet" href="assets/styles/gerenciar.css">
+    <script src="scripts/app-gerenciar-cliente.js" defer></script>
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="assets/images/logo-horizontal.png" alt="Logo Concessionária Turing">
+    </header>
+
+    <section class="navigation">
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Pesquisar por Nome ou CPF/CNPJ">
+            <button type="submit" id="searchBtn"><img src="assets/images/lupa.png" alt="Buscar"></button>
+        </div>
+        <div class="actions">
+            <button id="editBtn" disabled>EDITAR CLIENTE</button>
+            <button id="deleteBtn" disabled>EXCLUIR CLIENTE</button>
+            <a href="cadastrar-cliente.html">NOVO CLIENTE</a>
+        </div>
+    </section>
+
+    <div class="table-container">
+        <table id="clientesTable">
+            <thead>
+                <tr>
+                    <th>NOME COMPLETO</th>
+                    <th>CPF/CNPJ</th>
+                    <th>TELEFONE</th>
+                    <th>E-MAIL</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <footer>
+        <a href="menu.html">MENU INICIAL</a>
+        <button onclick="window.location.href='login.html'">LOGOUT</button>
+    </footer>
+
+</body>
+
+</html>

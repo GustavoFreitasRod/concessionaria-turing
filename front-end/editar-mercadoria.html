@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Mercadoria</title>
+    <link rel="stylesheet" href="assets/styles/cadastro.css">
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <section class="form-container">
+            <h1>EDITAR MERCADORIA</h1>
+            <form id="formMercadoria" onsubmit="return validarSenha()">
+                <fieldset>
+                    <legend>Dados da Mercadoria</legend>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="codigo">CÓDIGO</label>
+                        <input type="text" id="codigo" name="codigo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="item">ITEM</label>
+                        <input type="text" id="item" name="item" required>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="reset" class="btn-cancel">CANCELAR AÇÃO</button>
+                    <button type="submit" class="btn-save">SALVAR</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="./scripts/app-edit-mercadoria.js" defer></script>
+</body>
+</html>
