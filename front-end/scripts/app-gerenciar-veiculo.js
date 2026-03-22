@@ -196,7 +196,6 @@ deleteBtn.addEventListener("click", async () => {
   const confirmarExclusao = await mostrarModalConfirmacao(
     `Excluir o veículo ${veiculoSelecionado.modelo}?`,
   );
-
   if (confirmarExclusao) {
     try {
       const response = await fetch(`${API_URL}/${veiculoSelecionado.chassi}`, {

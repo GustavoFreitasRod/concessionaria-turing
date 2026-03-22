@@ -190,7 +190,6 @@ deleteBtn.addEventListener("click", async () => {
   const confirmarExclusao = await mostrarModalConfirmacao(
     `Tem certeza que deseja excluir ${selectedClient.nome_completo}?`,
   );
-
   if (confirmarExclusao) {
     try {
       const response = await fetch(`${API_URL}/${selectedClient.cpf_cnpj}`, {

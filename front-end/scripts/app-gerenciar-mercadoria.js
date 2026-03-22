@@ -132,7 +132,6 @@ deleteBtn.addEventListener("click", async () => {
   const confirmarExclusao = await mostrarModalConfirmacao(
     `Tem certeza que deseja excluir a mercadoria "${selectedMercadoria.nome}"?`,
   );
-
   if (confirmarExclusao) {
     try {
       const response = await fetch(
