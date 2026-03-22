@@ -29,7 +29,7 @@ O projeto está hospedado no Render e banco de dados no Neon para facilitar a vi
 - Controle de acesso para rotas protegidas;
 - Servir front-end estático pelo proprio back-end;
 
-## &#x1F468; Tecnologias utilizadas
+## :bar_chart:; Tecnologias utilizadas
 
 - **Node.js**: Runtime JavaScript que permite executar JavaScript no lado do servidor, fornecendo um ambiente eficiente e escalável para construir aplicações web.
 
