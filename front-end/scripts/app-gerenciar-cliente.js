@@ -187,9 +187,11 @@ searchInput.addEventListener("input", () =>
 // Deletar
 deleteBtn.addEventListener("click", async () => {
   if (!selectedClient) return;
-  if (
-    confirm(`Tem certeza que deseja excluir ${selectedClient.nome_completo}?`)
-  ) {
+  const confirmarExclusao = await mostrarModalConfirmacao(
+    `Tem certeza que deseja excluir ${selectedClient.nome_completo}?`,
+  );
+
+  if (confirmarExclusao) {
     try {
       const response = await fetch(`${API_URL}/${selectedClient.cpf_cnpj}`, {
         method: "DELETE",
@@ -233,4 +235,34 @@ function mostrarAlerta(mensagem) {
     alerta.classList.remove("show");
     setTimeout(() => alerta.remove(), 300);
   }, 3000);
+}
+
+function mostrarModalConfirmacao(mensagem) {
+  return new Promise((resolve) => {
+    const modal = document.getElementById("confirmacaoModal");
+    const mensagemEl = document.getElementById("confirmacaoMensagem");
+    const btnCancelar = document.getElementById("confirmacaoCancelar");
+    const btnConfirmar = document.getElementById("confirmacaoConfirmar");
+
+    if (!modal || !mensagemEl || !btnCancelar || !btnConfirmar) {
+      resolve(false);
+      return;
+    }
+
+    mensagemEl.textContent = mensagem;
+    modal.classList.add("active");
+
+    const fecharModal = (confirmou) => {
+      modal.classList.remove("active");
+      btnCancelar.removeEventListener("click", onCancelar);
+      btnConfirmar.removeEventListener("click", onConfirmar);
+      resolve(confirmou);
+    };
+
+    const onCancelar = () => fecharModal(false);
+    const onConfirmar = () => fecharModal(true);
+
+    btnCancelar.addEventListener("click", onCancelar);
+    btnConfirmar.addEventListener("click", onConfirmar);
+  });
 }

@@ -193,7 +193,9 @@ function editarVenda(id) {
 
 // deletar
 async function deletarVenda(id) {
-  const confirmar = confirm("Deseja realmente excluir esta venda?");
+  const confirmar = await mostrarModalConfirmacao(
+    "Deseja realmente excluir esta venda?",
+  );
   if (!confirmar) return;
 
   try {
@@ -209,4 +211,34 @@ async function deletarVenda(id) {
   } catch (error) {
     alert("Erro ao excluir venda.");
   }
+}
+
+function mostrarModalConfirmacao(mensagem) {
+  return new Promise((resolve) => {
+    const modal = document.getElementById("confirmacaoModal");
+    const mensagemEl = document.getElementById("confirmacaoMensagem");
+    const btnCancelar = document.getElementById("confirmacaoCancelar");
+    const btnConfirmar = document.getElementById("confirmacaoConfirmar");
+
+    if (!modal || !mensagemEl || !btnCancelar || !btnConfirmar) {
+      resolve(false);
+      return;
+    }
+
+    mensagemEl.textContent = mensagem;
+    modal.classList.add("active");
+
+    const fecharModal = (confirmou) => {
+      modal.classList.remove("active");
+      btnCancelar.removeEventListener("click", onCancelar);
+      btnConfirmar.removeEventListener("click", onConfirmar);
+      resolve(confirmou);
+    };
+
+    const onCancelar = () => fecharModal(false);
+    const onConfirmar = () => fecharModal(true);
+
+    btnCancelar.addEventListener("click", onCancelar);
+    btnConfirmar.addEventListener("click", onConfirmar);
+  });
 }

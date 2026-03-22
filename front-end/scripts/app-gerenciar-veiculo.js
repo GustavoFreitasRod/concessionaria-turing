@@ -193,7 +193,11 @@ searchInput.addEventListener("input", () =>
 
 deleteBtn.addEventListener("click", async () => {
   if (!veiculoSelecionado) return;
-  if (confirm(`Excluir o veículo ${veiculoSelecionado.modelo}?`)) {
+  const confirmarExclusao = await mostrarModalConfirmacao(
+    `Excluir o veículo ${veiculoSelecionado.modelo}?`,
+  );
+
+  if (confirmarExclusao) {
     try {
       const response = await fetch(`${API_URL}/${veiculoSelecionado.chassi}`, {
         method: "DELETE",
@@ -216,5 +220,35 @@ editBtn.addEventListener("click", () => {
   localStorage.setItem("veiculoEditando", JSON.stringify(veiculoSelecionado));
   window.location.href = "editar-veiculo.html";
 });
+
+function mostrarModalConfirmacao(mensagem) {
+  return new Promise((resolve) => {
+    const modal = document.getElementById("confirmacaoModal");
+    const mensagemEl = document.getElementById("confirmacaoMensagem");
+    const btnCancelar = document.getElementById("confirmacaoCancelar");
+    const btnConfirmar = document.getElementById("confirmacaoConfirmar");
+
+    if (!modal || !mensagemEl || !btnCancelar || !btnConfirmar) {
+      resolve(false);
+      return;
+    }
+
+    mensagemEl.textContent = mensagem;
+    modal.classList.add("active");
+
+    const fecharModal = (confirmou) => {
+      modal.classList.remove("active");
+      btnCancelar.removeEventListener("click", onCancelar);
+      btnConfirmar.removeEventListener("click", onConfirmar);
+      resolve(confirmou);
+    };
+
+    const onCancelar = () => fecharModal(false);
+    const onConfirmar = () => fecharModal(true);
+
+    btnCancelar.addEventListener("click", onCancelar);
+    btnConfirmar.addEventListener("click", onConfirmar);
+  });
+}
 
 carregarVeiculos();

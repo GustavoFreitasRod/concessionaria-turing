@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel de Usuário</title>
     <link rel="stylesheet" href="assets/styles/gerenciar.css">
+    <link rel="stylesheet" href="assets/styles/modal-confirmacao.css">
     <script src="scripts/app-gerenciar-usuario.js" defer></script>
     <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
 </head>
@@ -44,6 +45,20 @@
         <a href="menu.html">MENU INICIAL</a>
         <button onclick="window.location.href='login.html'">LOGOUT</button>
     </footer>
+
+    <div id="confirmacaoModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-icon">!</span>
+                <span>Confirmar exclusão</span>
+            </div>
+            <p id="confirmacaoMensagem" class="modal-message"></p>
+            <div class="modal-buttons">
+                <button id="confirmacaoCancelar" class="modal-btn modal-btn-cancel">Cancelar</button>
+                <button id="confirmacaoConfirmar" class="modal-btn modal-btn-confirm">Excluir</button>
+            </div>
+        </div>
+    </div>
 
 </body>
 
